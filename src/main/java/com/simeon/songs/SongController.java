@@ -14,6 +14,12 @@ public class SongController {
     private SongRepository songRepository;
 
     // ✅ GET all songs
+
+    @GetMapping("/")
+    public String home() {
+        return "API is running!";
+    }
+    
     @GetMapping
     public List<Song> getAllSongs() {
         return songRepository.findAll();

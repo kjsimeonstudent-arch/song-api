@@ -13,15 +13,15 @@ public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
-            @Value("${ALLOWED_ORIGINS:https://song-ui-d5fq.onrender.com}")
+           
             private String allowedOrigins;
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/**") // Allow all endpoints
-                        .allowedOrigins(allowedOrigins.split(",")) // Support multiple origins separated by commas
+                        .allowedOrigins(allowedOrigins.split("https://song-ui-d5fq.onrender.com")) // Support multiple origins separated by commas
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(false); // If using cookies or authentication headers
+                        .allowCredentials(true); // If using cookies or authentication headers
             }
         };
     }

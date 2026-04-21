@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/simeon/songs")
+@RequestMapping("/velasco/songs")
 public class SongController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class SongController {
     public String home() {
         return "API is running!";
     }
-    
+
     @GetMapping
     public List<Song> getAllSongs() {
         return songRepository.findAll();
@@ -73,7 +73,6 @@ public class SongController {
     public List<Song> searchSongs(@PathVariable String value) {
         return songRepository
                 .findByTitleContainingIgnoreCaseOrArtistContainingIgnoreCaseOrAlbumContainingIgnoreCaseOrGenreContainingIgnoreCase(
-                        value, value, value, value
-                );
+                        value, value, value, value);
     }
 }

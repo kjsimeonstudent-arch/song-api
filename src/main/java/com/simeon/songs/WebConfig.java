@@ -21,7 +21,7 @@ public class WebConfig {
                         .allowedOrigins(allowedOrigins.split(",")) // Support multiple origins separated by commas
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true); // If using cookies or authentication headers
+                        .allowCredentials(false); // If using cookies or authentication headers
             }
         };
     }

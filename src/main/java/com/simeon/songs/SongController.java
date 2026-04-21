@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://song-ui-d5fq.onrender.com")
 @RestController
 @RequestMapping("/simeon/songs")
 public class SongController {

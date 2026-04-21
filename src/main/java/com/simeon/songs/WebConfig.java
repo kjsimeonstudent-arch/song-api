@@ -18,7 +18,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/**") // Allow all endpoints
-                        .allowedOrigins(allowedOrigins.split("https://song-ui-d5fq.onrender.com")) // Support multiple origins separated by commas
+                        .allowedOrigins(allowedOrigins.split(",")) // Support multiple origins separated by commas
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true); // If using cookies or authentication headers

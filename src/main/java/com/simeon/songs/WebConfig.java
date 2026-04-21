@@ -13,12 +13,12 @@ public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
-            @Value("${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}")
+            @Value("${ALLOWED_ORIGINS:https://song-ui-d5fq.onrender.com}")
             private String allowedOrigins;
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/**") // Allow all endpoints
-                        .allowedOrigins("*") // Support multiple origins separated by commas
+                        .allowedOrigins(allowedOrigins.split(",")) // Support multiple origins separated by commas
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true); // If using cookies or authentication headers
